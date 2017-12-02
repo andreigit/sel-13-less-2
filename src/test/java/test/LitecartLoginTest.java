@@ -32,9 +32,11 @@ public class LitecartLoginTest {
 
     @Test
     public void checkLitecortLogin() {
+        final String ADMIN = "admin";
+
         driver.get("http://localhost/litecart/admin/");
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.name("username")).sendKeys(ADMIN);
+        driver.findElement(By.name("password")).sendKeys(ADMIN);
         driver.findElement(By.name("login")).click();
         wait.until(titleIs("My Store"));
     }
