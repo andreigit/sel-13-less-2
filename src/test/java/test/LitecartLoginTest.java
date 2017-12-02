@@ -17,21 +17,11 @@ public class LitecartLoginTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private static final String START_XAMPP_EXE = "C:\\xampp\\xampp_start.exe";
-    private static final String STOP_XAMPP_EXE = "C:\\xampp\\xampp_stop.exe";
-
-    public String getRunServerString() {
-        return START_XAMPP_EXE;
-    }
-
-    public String getStopServerString() {
-        return STOP_XAMPP_EXE;
-    }
 
     @BeforeClass
     public void openBrowser() {
         try {
-            Runtime.getRuntime().exec(getRunServerString());
+            Runtime.getRuntime().exec(SettingsProvider.getRunServerString());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,7 +44,7 @@ public class LitecartLoginTest {
         driver.quit();
         driver = null;
         try {
-            Runtime.getRuntime().exec(getStopServerString());
+            Runtime.getRuntime().exec(SettingsProvider.getStopServerString());
         } catch (IOException e) {
             e.printStackTrace();
         }
