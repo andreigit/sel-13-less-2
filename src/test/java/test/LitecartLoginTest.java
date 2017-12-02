@@ -31,7 +31,7 @@ public class LitecartLoginTest {
     }
 
     @Test
-    public void checkLitecortLogin() throws InterruptedException {
+    public void checkLitecortLogin() {
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
