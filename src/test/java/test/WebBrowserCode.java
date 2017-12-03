@@ -1,6 +1,6 @@
 package test;
 
-public enum WebDriverCode {
+public enum WebBrowserCode {
     CHROME,
     FIREFOX,
     EDGE,

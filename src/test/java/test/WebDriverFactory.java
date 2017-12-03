@@ -8,8 +8,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class WebDriverFactory {
 
-    public static WebDriver CreateDriver(WebDriverCode driverCode) {
-        switch (driverCode) {
+    public static WebDriver createDriver(WebBrowserCode browser) {
+        switch (browser) {
             case CHROME:
                 return new ChromeDriver();
             case FIREFOX:
