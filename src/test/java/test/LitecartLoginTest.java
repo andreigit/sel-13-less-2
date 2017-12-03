@@ -1,18 +1,23 @@
 package test;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
-import static test.DriverFactory.*;
 
 public class LitecartLoginTest {
 
-    private static final String BROWSER = "chrome";
+    private static final WebDriverCode DEFAULT_BROWSER = WebDriverCode.CHROME;
+    private static final long DEFAULT_TIMEOUT_IN_SECONDS = 10;
+
+    private WebDriver driver;
+    private WebDriverWait driverWait;
 
     @BeforeClass
     public void openBrowser() {
@@ -21,21 +26,28 @@ public class LitecartLoginTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        startBrowser(BROWSER);
+        
+        driver = WebDriverFactory.CreateDriver(DEFAULT_BROWSER);
+        driverWait = new WebDriverWait(driver, DEFAULT_TIMEOUT_IN_SECONDS);
     }
 
     @Test
-    public void checkLitecortLogin() {
-        getDriver(BROWSER).get("http://localhost/litecart/admin/");
-        getDriver(BROWSER).findElement(By.name("username")).sendKeys("admin");
-        getDriver(BROWSER).findElement(By.name("password")).sendKeys("admin");
-        getDriver(BROWSER).findElement(By.name("login")).click();
-        getWait().until(titleIs("My Store"));
+    public void checkLitecartLogin() {
+        final String ADMIN = "admin";
+
+        driver.get("http://localhost/litecart/admin/");
+        driver.findElement(By.name("username")).sendKeys(ADMIN);
+        driver.findElement(By.name("password")).sendKeys(ADMIN);
+        driver.findElement(By.name("login")).click();
+        driverWait.until(titleIs("My Store"));
     }
 
     @AfterClass
     public void closeBrowser() {
-        stopBrowser(BROWSER);
+        driver.quit();
+        driver = null;
+        driverWait = null;
+
         try {
             Runtime.getRuntime().exec(SettingsProvider.getStopServerString());
         } catch (IOException e) {

@@ -13,5 +13,4 @@ public class SettingsProvider {
     public static String getStopServerString() {
         return STOP_XAMPP_EXE;
     }
-
 }
