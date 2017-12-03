@@ -12,8 +12,6 @@ import static test.DriverFactory.*;
 
 public class LitecartLoginTest {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
     private static final String START_XAMPP_EXE = "C:\\xampp\\xampp_start.exe";
     private static final String STOP_XAMPP_EXE = "C:\\xampp\\xampp_stop.exe";
 
@@ -24,7 +22,6 @@ public class LitecartLoginTest {
     public String getStopServerString() {
         return STOP_XAMPP_EXE;
     }
-
 
     private static final String BROWSER = "chrome";
 
