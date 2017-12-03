@@ -43,5 +43,6 @@ public abstract class BrowserTestBase {
     protected void cleanDriver() {
         driver.quit();
         driver = null;
+        driverWait = null;
     }
 }
