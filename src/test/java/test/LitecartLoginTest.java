@@ -26,7 +26,7 @@ public class LitecartLoginTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         driver = WebDriverFactory.CreateDriver(DEFAULT_BROWSER);
         driverWait = new WebDriverWait(driver, DEFAULT_TIMEOUT_IN_SECONDS);
     }

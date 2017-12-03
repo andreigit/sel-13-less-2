@@ -19,7 +19,7 @@ public class WebDriverFactory {
             case IE:
                 return new InternetExplorerDriver();
             default:
-                throw new IllegalArgumentException("driverCode");
+                throw new IllegalArgumentException("Unexpected driver code.");
         }
     }
 
