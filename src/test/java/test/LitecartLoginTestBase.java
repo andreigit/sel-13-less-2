@@ -9,7 +9,11 @@ import org.testng.annotations.Test;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class LitecartLoginTest extends BrowserTestBase {
+public abstract class LitecartLoginTestBase extends BrowserTestBase {
+
+    public LitecartLoginTestBase(WebBrowserCode browserCode){
+        super(browserCode);
+    }
 
     @BeforeClass
     public void openBrowser() {
