@@ -41,7 +41,7 @@ public class DriverFactory {
         } else if (browser.equals("ie")) {
             startIE();
         } else {
-            throw new RuntimeException();
+            throw new IllegalArgumentException("browser");
         }
     }
 
@@ -53,7 +53,7 @@ public class DriverFactory {
         } else if (browser.equals("ie")) {
             return ieDriver;
         } else {
-            throw new RuntimeException();
+            throw new IllegalArgumentException("browser");
         }
     }
 
