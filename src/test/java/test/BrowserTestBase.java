@@ -2,7 +2,6 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import test.webdriverfactory.WebDriverFactoryKt;
 
 public abstract class BrowserTestBase {
 
@@ -38,7 +37,6 @@ public abstract class BrowserTestBase {
     protected void initDriver()
     {
         driver = WebDriverFactoryKt.createWebDriver(browser);
-//        driver = WebDriverFactory.createDriver(browser);
         driverWait = new WebDriverWait(driver, timeoutInSeconds);
     }
 
