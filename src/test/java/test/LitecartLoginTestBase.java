@@ -18,7 +18,7 @@ public abstract class LitecartLoginTestBase extends BrowserTestBase {
     @BeforeClass
     public void openBrowser() {
         try {
-            Runtime.getRuntime().exec(SettingsProvider.getRunServerString());
+            Runtime.getRuntime().exec(SettingsKt.getRunServerString());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public abstract class LitecartLoginTestBase extends BrowserTestBase {
         cleanDriver();
 
         try {
-            Runtime.getRuntime().exec(SettingsProvider.getStopServerString());
+            Runtime.getRuntime().exec(SettingsKt.getStopServerString());
         } catch (IOException e) {
             e.printStackTrace();
         }
