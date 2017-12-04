@@ -5,6 +5,8 @@
         <classes>
             <class name="test.LitecartLoginChromeTest"/>
             <class name="test.LitecartLoginFirefoxTest"/>
+            <class name="test.LitecartLoginEdgeTest"/>
+            <class name="test.LitecartLoginIETest"/>
             <class name="test.MyFirstTest"/>
         </classes>
     </test>
