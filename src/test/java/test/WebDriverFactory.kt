@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.edge.EdgeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.ie.InternetExplorerDriver
-import test.WebBrowserCode
 import test.WebBrowserCode.*
 
 fun createWebDriver(browserCode: WebBrowserCode): WebDriver =
