@@ -2,6 +2,7 @@ package test
 
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.support.ui.WebDriverWait
+import kotlin.properties.Delegates
 
 private fun defaultBrowser() = WebBrowserCode.CHROME
 private const val BROWSER_DEFAULT_TIMEOUT_IN_SECONDS = 10L
@@ -10,10 +11,10 @@ abstract class BrowserTestBase {
     private val browser: WebBrowserCode
     private val timeoutInSeconds: Long
 
-    protected var driver: WebDriver? = null
+    protected var driver: WebDriver by Delegates.notNull()
         private set
 
-    protected var driverWait: WebDriverWait? = null
+    protected var driverWait: WebDriverWait by Delegates.notNull()
         private set
 
     constructor(browser: WebBrowserCode, timeoutInSeconds: Long) {
@@ -33,8 +34,6 @@ abstract class BrowserTestBase {
     }
 
     protected fun cleanDriver() {
-        driver?.quit()
-        driver = null
-        driverWait = null
+        driver.quit()
     }
 }

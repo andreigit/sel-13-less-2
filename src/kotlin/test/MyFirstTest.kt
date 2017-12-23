@@ -15,10 +15,10 @@ class MyFirstTest: BrowserTestBase() {
 
     @Test
     fun checkSoftwareTestingSite() {
-        driver!!.get("http://software-testing.ru/")
-        driverWait!!.until<Boolean>(titleIs("Software-Testing.Ru"))
-        driver!!.findElement(By.xpath("//span[text()='Библиотека']")).click()
-        Assert.assertEquals("Библиотека", driver!!.title)
+        driver.get("http://software-testing.ru/")
+        driverWait.until<Boolean>(titleIs("Software-Testing.Ru"))
+        driver.findElement(By.xpath("//span[text()='Библиотека']")).click()
+        Assert.assertEquals("Библиотека", driver.title)
     }
 
     @AfterClass

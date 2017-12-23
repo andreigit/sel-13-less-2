@@ -23,11 +23,11 @@ abstract class LitecartLoginTestBase(browser: WebBrowserCode) : BrowserTestBase(
     fun checkLitecartLogin() {
         val admin = "admin"
 
-        driver!!.get("http://localhost/litecart/admin/")
-        driver!!.findElement(By.name("username")).sendKeys(admin)
-        driver!!.findElement(By.name("password")).sendKeys(admin)
-        driver!!.findElement(By.name("login")).click()
-        driverWait!!.until<Boolean>(titleIs("My Store"))
+        driver.get("http://localhost/litecart/admin/")
+        driver.findElement(By.name("username")).sendKeys(admin)
+        driver.findElement(By.name("password")).sendKeys(admin)
+        driver.findElement(By.name("login")).click()
+        driverWait.until<Boolean>(titleIs("My Store"))
     }
 
     @AfterClass
