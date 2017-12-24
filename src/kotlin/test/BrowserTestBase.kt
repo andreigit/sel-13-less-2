@@ -35,5 +35,6 @@ abstract class BrowserTestBase {
 
     protected fun cleanDriver() {
         driver.quit()
+        driver.close()
     }
 }
